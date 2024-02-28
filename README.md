@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# React Modal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Objective
 
-## Available Scripts
+To understand how to conditionally render the contents of a modal and how to pass a function as props to a child component. Modals are pop-ups that are typically dynamically rendered.
 
-In the project directory, you can run:
+## Learning
 
-### `npm start`
+In this lab, we will practice with using React to conditionally render elements on the page. We will need to pass props (both a state and a function) to do so.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Topics:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React conditional rendering
+- React props
 
-### `npm test`
+## Achieving
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Your work will result in:
 
-### `npm run build`
+- A webpage with a 'Open Modal' button.
+- When the button is clicked, a semi-transparent modal pops up that covers the original content. It should inform the user it is a modal, and contain a 'Close Modal' button.
+- When 'Close Modal' is clicked, the modal disappears and only the original content remains.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Procedure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Setting up the components
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [ ] Create a new file, `Modal.jsx`. Set up `Modal.jsx` as you would any other new component. 
 
-### `npm run eject`
+_In `App.jsx`_
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [ ] Ensure you have the Modal component imported.
+- [ ] Create the `modalState` state variable and have it set initially to `false`.
+- [ ] Create a function named `handleClick`.
+- [ ] Within `handleClick`, set up the following conditional logic: if `modalState` is true, `setModalState` to false. Else, `setModalState` to true.
+- Now, in the return statement, set up the following:
+- Within `<main>`, a button that has an onClick event set to the `handleClick` function and has the text "Open modal".
+- Below the button, a paragraph of placeholder text.
+- Below the paragraph, render `<Modal />`. Pass it two props: `modalState` and `handleClick`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+_In `Modal.jsx`_
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+-  [ ] Ensure the Modal function accepts the parameter of `props` AND that `Modal.css` is imported.
+-  [ ] Inside of your Modal function, the first line will be a conditional if statement that checks if `props.modalState` is true.
+-  [ ] **Inside of the if statement's code block**, set up a `return()` statement that contains the following:
+-  [ ] A `<main>` element with an id of `modal-background`.
+-  [ ] A `<section>` element with an id of `modal-content`; it should contain "I am a modal!"
+-  [ ] A `<button>` within `<section>`with the `onClick` event of `props.handleClick` and the text "Close modal."
+-  [ ] **Outside of the if statement's code block**, set up a `return()` statement that contains the following:
+-  [ ] A `<div>` with an inline `style` of `display:"none"`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Review
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+In this lab, we will have created a page that contains buttons to open and close a modal. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The software should:
 
-### Code Splitting
+- Have placeholder text and an "Open Modal" button.
+- When the "Open Modal" button is clicked, new elements appear on the page that inform the user that this is a modal; it also contains a "Close Modal" button.
+- When the "Close Modal" button is clicked, the new elements disappear and the page returns to its original state.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Going Further
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Many modals you come across on the Internet do not utilize a "Close" button but close when you click on the background. How could you implement an `onClick` event to do this?
+- Many modals you come across on the Internet pop up upon page load. How would you change the conditional logic and buttons to acheive this?
+- This modal is not styled. Try incorporating this [frontendmentor challenge](https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj) so your modal is now an order summary. You will need to import the image assets and the fonts into replit.
