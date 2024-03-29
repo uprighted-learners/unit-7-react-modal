@@ -23,11 +23,15 @@ Your work will result in:
 
 ## Procedure
 
+## Starting up the React App
+- [ ] Once cloned, install the projects dependencies using `npm install` or `npm i`
+- [ ] Use `npm start` and visit the app on your browser at `localhost:3000`
+
 ### Setting up the components
 
 - [ ] Create a new file, `Modal.jsx`. Set up `Modal.jsx` as you would any other new component. 
 
-_In `App.jsx`_
+_In `App.js`_
 
 - [ ] Ensure you have the Modal component imported.
 - [ ] Create the `modalState` state variable and have it set initially to `false`.
