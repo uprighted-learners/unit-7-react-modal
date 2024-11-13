@@ -6,7 +6,7 @@ To understand how to conditionally render the contents of a modal and how to pas
 
 ## Learning
 
-In this lab, we will practice with using React to conditionally render elements on the page. We will need to pass props (both a state and a function) to do so.
+In this exercise, we will practice with using React to conditionally render elements on the page. We will need to pass props (both a state and a function) to do so.
 
 Topics:
 
@@ -56,7 +56,7 @@ _In `Modal.jsx`_
 
 ## Review
 
-In this lab, we will have created a page that contains buttons to open and close a modal. 
+In this exercise, we will have created a page that contains buttons to open and close a modal. 
 
 The software should:
 
